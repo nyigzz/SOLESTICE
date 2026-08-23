@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SoleStice sneaker shop - find your next everyday pair.">
+  <title>SoleStice | Everyday sneakers, better steps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="SoleStice home"><span class="brand-mark">S</span><span>SoleStice</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="active" href="#shop">Shop</a>
+        <a href="#story">Our approach</a>
+        <a href="#help">Help</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button" id="searchToggle" type="button" aria-label="Open search" aria-expanded="false">⌕</button>
+        <button class="bag-button" id="cartToggle" type="button" aria-label="Open shopping bag" aria-expanded="false">Bag <span class="bag-count" id="cartCount">0</span></button>
+      </div>
+    </div>
+    <div class="search-bar" id="searchBar" hidden>
+      <label for="searchInput">Search sneakers</label>
+      <div class="search-input-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Try “running” or “white”"><button id="clearSearch" type="button" aria-label="Clear search">×</button></div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Spring / summer 2025</p>
+        <h1 id="hero-title">Your fit starts<br><em>from the ground up.</em></h1>
+        <p class="hero-text">Sneakers made for everyday rotation. Built to stand out, made to go with everything.</p>
+        <a class="primary-button" href="#shop">Explore the collection <span>↗</span></a>
+      </div>
+      <div class="hero-art" aria-label="Sneaker in a daily streetwear setting">
+        <img class="daily-movement-photo" src="images/daily-movement.jpg" alt="Sneaker in a daily streetwear setting"><p>01 / daily movement</p>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Store benefits">
+      <span>Free shipping over ₱5,000</span><span>30-day easy returns</span><span>Designed in Boss Joey's Bilyaran</span>
+    </section>
+
+    <section class="shop-section" id="shop" aria-labelledby="shop-title">
+      <div class="section-heading"><div><p class="eyebrow">The edit</p><h2 id="shop-title">Find your next pair</h2></div><div class="shop-note"><p class="results-label" id="resultsLabel">6 styles</p><p class="resale-note">Prices reflect resale value, not SRP.</p></div></div>
+      <div class="shop-tools">
+        <div class="filter-group" role="group" aria-label="Filter products">
+          <button class="filter-button active" data-filter="all" type="button">All styles</button><button class="filter-button" data-filter="lifestyle" type="button">Lifestyle</button><button class="filter-button" data-filter="running" type="button">Running</button><button class="filter-button" data-filter="sports" type="button">Sports</button><button class="filter-button" data-filter="collabs" type="button">Collabs</button>
+        </div>
+        <label class="sort-control">Sort by <select id="sortSelect"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></label>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>No sneakers match that search. Try another color or category.</p>
+    </section>
+
+    <section class="story-section" id="story" aria-labelledby="story-title"><div class="story-number">02</div><div><p class="eyebrow">Made for real life</p><h2 id="story-title">Less fuss.<br>More miles.</h2></div><p>Curated branded pairs for everyday rotation.</p></section>
+
+    <section class="help-section" id="help" aria-labelledby="help-title"><div><p class="eyebrow">Need a hand?</p><h2 id="help-title">Your questions,<br>answered.</h2><div class="contact-info"><p class="contact-name">Jose Alvin Inigo M. Peralta</p><a href="mailto:nyigzz1010@gmail.com">nyigzz1010@gmail.com</a></div></div><div class="faq-list"><details><summary>How does sizing run? <span>+</span></summary><p>Stride fits true to size for most feet. If you are between sizes, we recommend sizing up.</p></details><details><summary>What is your return policy? <span>+</span></summary><p>Try your pair at home for 30 days. Returns are free if your sneakers are in resellable condition.</p></details><details><summary>When will my order arrive? <span>+</span></summary><p>Standard delivery takes 3–5 business days. You will receive tracking by email when your pair ships.</p></details></div></section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag" aria-hidden="true"><div class="cart-header"><div><p class="eyebrow">Your selection</p><h2>Shopping bag</h2></div><button class="close-button" id="cartClose" type="button" aria-label="Close shopping bag">×</button></div><div class="cart-items" id="cartItems"><div class="cart-empty"><span>○</span><p>Your bag is ready when you are.</p><a href="#shop" id="startShopping">Browse sneakers</a></div></div><div class="cart-footer" id="cartFooter" hidden><div class="subtotal"><span>Subtotal</span><strong id="subtotal">$0</strong></div><button class="checkout-button" id="checkoutButton" type="button">Continue to checkout <span>→</span></button><p class="secure-note">Secure checkout · Free returns</p></div></aside><div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <footer><a class="brand" href="#top"><span class="brand-mark">S</span><span>SoleStice</span></a><p>Good shoes for the everyday.</p><p>© 2025 SoleStice Co.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
